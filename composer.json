@@ -7,7 +7,7 @@
         "php": ">=8.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "antonio/aitestbundle": "dev-main",
+        "antonio/aitestbundle": "^1.2",
         "antonio150/uploadimagebundle": "dev-main",
         "doctrine/doctrine-bundle": "^2.18",
         "doctrine/doctrine-migrations-bundle": "^3.7",

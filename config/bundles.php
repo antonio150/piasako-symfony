@@ -16,5 +16,5 @@ return [
     Lexik\Bundle\JWTAuthenticationBundle\LexikJWTAuthenticationBundle::class => ['all' => true],
     SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle::class => ['all' => true],
     UploadImageBundle\UploadImageBundle::class => ['all' => true],
-
+    AiTestBundle\AiTestBundle::class => ['dev' => true, 'test' => true],
 ];

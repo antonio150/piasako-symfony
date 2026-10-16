@@ -4,27 +4,26 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e02569e778b280eb16cfa22cde4f6267",
+    "content-hash": "ab9195d340decf5c22a9573a2f3d2ad9",
     "packages": [
         {
             "name": "antonio/aitestbundle",
-            "version": "dev-main",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antonio150/AiTestBundle.git",
-                "reference": "67ac3e3e12958f19c0bcf7420a12cff05806f158"
+                "reference": "0aa2c7aea0cfdd61e3cc77f7b45c1dd3e18cc364"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antonio150/AiTestBundle/zipball/67ac3e3e12958f19c0bcf7420a12cff05806f158",
-                "reference": "67ac3e3e12958f19c0bcf7420a12cff05806f158",
+                "url": "https://api.github.com/repos/antonio150/AiTestBundle/zipball/0aa2c7aea0cfdd61e3cc77f7b45c1dd3e18cc364",
+                "reference": "0aa2c7aea0cfdd61e3cc77f7b45c1dd3e18cc364",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
                 "symfony/framework-bundle": "^7.0"
             },
-            "default-branch": true,
             "type": "symfony-bundle",
             "autoload": {
                 "psr-4": {
@@ -36,10 +35,10 @@
             ],
             "description": "Bundle Symfony pour générer et exécuter des tests automatiquement sur les controllers",
             "support": {
-                "source": "https://github.com/antonio150/AiTestBundle/tree/main",
+                "source": "https://github.com/antonio150/AiTestBundle/tree/v1.2.0",
                 "issues": "https://github.com/antonio150/AiTestBundle/issues"
             },
-            "time": "2026-01-29T14:23:41+00:00"
+            "time": "2026-01-29T16:50:55+00:00"
         },
         {
             "name": "antonio150/uploadimagebundle",
@@ -10804,7 +10803,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "antonio/aitestbundle": 20,
         "antonio150/uploadimagebundle": 20
     },
     "prefer-stable": true,
