@@ -31,9 +31,7 @@ Les routes d'administration nécessitent une authentification. Les fonctionnalit
 - Composer.
 - Un serveur **MySQL 8** accessible depuis l'application.
 - Symfony CLI, facultatif (sinon, le serveur PHP intégré peut être utilisé).
-- Docker Compose, facultatif pour les services décrits dans `compose.yaml`.
-
-> **Note sur Docker Compose :** la configuration actuelle de `compose.yaml` démarre PostgreSQL, alors que le mécanisme de création et de sélection des bases clientes dans l'application utilise actuellement le pilote MySQL. Le service PostgreSQL fourni ne suffit donc pas, sans adaptation de la configuration et du code, à démarrer l'application complète. Utilisez MySQL pour le lancement tel quel.
+- Docker Compose, facultatif pour démarrer l'application et MySQL dans des conteneurs.
 
 ## Installation et configuration
 
@@ -67,6 +65,35 @@ php bin/console doctrine:schema:update --em=dynamic --force
 Les nouvelles bases de sites doivent également être accessibles au compte MySQL configuré. La commande `app:update-multi-schema` applique le schéma des entités dynamiques aux bases des sites déjà enregistrés dans la base principale.
 
 ## Démarrer l'application
+
+### Avec Docker Compose
+
+Depuis la racine du projet, démarrez les conteneurs :
+
+```bash
+docker compose up --build
+```
+
+L'application est disponible sur <http://localhost:8080>, l'interface Mailpit sur <http://localhost:8025>, et MySQL sur le port `3307` de la machine. Compose crée les bases `piasako` et `tapos` au premier démarrage et configure les deux connexions Symfony vers le service MySQL.
+
+Le mot de passe root MySQL de développement vaut `root` par défaut. Pour le modifier, définissez `MYSQL_ROOT_PASSWORD` avant de démarrer Compose ; le même mot de passe sera utilisé par l'application. Ne réutilisez pas cette configuration de développement en production.
+
+Initialisez les schémas dans le conteneur PHP :
+
+```bash
+docker compose exec php php bin/console doctrine:schema:update --em=default --force
+docker compose exec php php bin/console doctrine:schema:update --em=dynamic --force
+```
+
+Pour arrêter les conteneurs sans supprimer les données :
+
+```bash
+docker compose down
+```
+
+Les données MySQL restent dans le volume Docker `database_data`. Le script de création de `tapos` est exécuté uniquement lors de l'initialisation d'un volume MySQL vide.
+
+### Sans Docker
 
 Avec Symfony CLI :
 

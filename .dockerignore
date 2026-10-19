@@ -1,0 +1,10 @@
+.git
+.env*
+!.env.dist
+config/jwt/*.pem
+vendor
+assets/vendor
+public/assets
+public/bundles
+var
+node_modules
